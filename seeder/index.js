@@ -12,6 +12,10 @@ const seed = async () => {
     const camp = new Campground({
       location: `${cities[idx].city}, ${cities[idx].state}`,
       title: `${sample(descriptors)} ${sample(places)}`,
+      image: 'https://source.unsplash.com/collection/483251',
+      description:
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam et quod eaque accusantium dolorum maiores porro nulla quidem impedit nihil. Nemo, distinctio obcaecati. Eaque obcaecati ut voluptatum dolorum, enim tempora.',
+      price: Math.floor(Math.random() * 20) + 10,
     });
     await camp.save();
   }

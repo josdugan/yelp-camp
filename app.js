@@ -1,12 +1,15 @@
 const express = require('express');
 const methodOverride = require('method-override');
 const path = require('path');
+const ejsMate = require('ejs-mate');
 require('./db');
 const Campground = require('./models/campground');
 
 const PORT = process.env.PORT || 3000;
 
 const app = express();
+
+app.engine('ejs', ejsMate);
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.urlencoded({ extended: true }));
